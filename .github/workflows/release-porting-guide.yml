@@ -28,7 +28,7 @@ jobs:
         env:
           ANSIBLE_VERSION_FULL: ${{ inputs.ansible-version }}
         run: >-
-          echo ansible-version-major="${ANSIBLE_VERSION_FULL//\.+([[:digit:]])}"
+          echo ansible-version-major="${ANSIBLE_VERSION_FULL%%.*}"
           >> "${GITHUB_OUTPUT}"
         shell: bash --noprofile --norc -O extglob -eEuo pipefail {0}
 
