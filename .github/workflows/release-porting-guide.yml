@@ -1,5 +1,5 @@
 ---
-name: Ansible porting guide
+name: Ansible porting guide creation
 on:
   workflow_dispatch:
     inputs:
