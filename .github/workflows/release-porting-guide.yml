@@ -57,6 +57,8 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
 
       - name: Add the porting guide
+        env:
+          ANSIBLE_VERSION_MAJOR: ${{ steps.context.outputs.ansible-version-major }}
         run: git add docs/docsite/rst/porting_guides/"porting_guide_${ANSIBLE_VERSION_MAJOR}.rst"
 
       - name: Commit the porting guide
