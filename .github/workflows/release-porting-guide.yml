@@ -24,8 +24,7 @@ jobs:
         Add the Ansible community ${{ inputs.ansible-version }} porting guide
 
     steps:
-      - name: Compute derived context
-        id: context
+      - name: Extract the major version
         run: echo "ANSIBLE_VERSION_MAJOR=${ANSIBLE_VERSION_FULL%%.*}" >> "${GITHUB_ENV}"
         shell: bash --noprofile --norc -O extglob -eEuo pipefail {0}
 
