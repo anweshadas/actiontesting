@@ -59,6 +59,8 @@ jobs:
           git commit -m "${CI_COMMIT_MESSAGE}"
 
       - name: Push to the repo
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: git push origin "${GIT_BRANCH}"
 
       - name: Create the porting guide PR as draft
