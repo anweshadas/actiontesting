@@ -17,6 +17,7 @@ jobs:
   upload-porting-guide:
     name: Extract the porting guide
     runs-on: ubuntu-latest
+    environment: github-bot
     env:
       GIT_BRANCH: "release/porting-guide-${{ inputs.ansible-version }}"
       ANSIBLE_VERSION_FULL: ${{ inputs.ansible-version }}
